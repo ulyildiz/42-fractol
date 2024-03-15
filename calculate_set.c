@@ -6,7 +6,7 @@
 /*   By: ulyildiz <ulyildiz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 07:34:06 by ulyildiz          #+#    #+#             */
-/*   Updated: 2024/03/15 06:13:47 by ulyildiz         ###   ########.fr       */
+/*   Updated: 2024/03/15 08:47:54 by ulyildiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,6 @@ int	calc_for_bship(t_complex c, t_screen *window)
 		if (z.re * z.re + z.im * z.im > THRESHOLD)
 			break ;
 		z = sum_co(square_co(z), c);
-	}	
+	}
 	return (window->set->iteration);
 }
