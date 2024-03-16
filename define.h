@@ -52,11 +52,11 @@ typedef struct s_set
 typedef struct s_screen
 {
 	t_set				*set;
-	char				*fract_name;
+	const char			*fract_name;
 	void				*mlx_ptr;
 	void				*win_ptr;
 	void				*img_ptr;
-	char				*img_addr;
+	const char			*img_addr;
 	int					bits_per_pixel;
 	int					size_line;
 	int					endian;

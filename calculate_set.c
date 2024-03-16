@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include <stdlib.h>
 #include <math.h>
 
 static t_complex	sum_co(t_complex num1, t_complex num2)

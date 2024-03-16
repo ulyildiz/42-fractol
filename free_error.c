@@ -34,6 +34,7 @@ static void	input_error(void)
 	write(2, "Parameters have to be between -2 and 2\n", 39);
 	write(2, "For burningship type as: ", 25);
 	write(2, "./fractol burningship\n", 22);
+	exit(1);
 }
 
 void	free_all(t_screen *window)
@@ -41,8 +42,8 @@ void	free_all(t_screen *window)
 	free_gui(window);
 	if (window->set)
 		free(window->set);
-	if (window->fract_name)
-		free(window->fract_name);
+	/*if (window->fract_name)
+		free(window->fract_name);*/
 	exit(1);
 }
 
@@ -55,5 +56,4 @@ void	error_occur(int flag, t_screen *window)
 		free_all(window);
 		write(2, "Program couldn't initiliaze window.\n", 36);
 	}
-	exit(1);
 }

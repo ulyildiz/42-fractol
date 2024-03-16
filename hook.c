@@ -12,7 +12,6 @@
 
 #include "fractol.h"
 #include "mlx/mlx.h"
-#include <stdio.h>
 
 static void	image_shifting(int keycode, t_screen *window)
 {
@@ -97,6 +96,6 @@ void	hook_event(t_screen *window)
 {
 	mlx_hook(window->win_ptr, 2, 0, key_event, window);
 	mlx_hook(window->win_ptr, 17, 1, closing, window);
-	mlx_hook(window->win_ptr, 4, 0, mouse_event, window);
-	mlx_hook(window->win_ptr, 6, 1, motion_event, window);
+	mlx_hook(window->win_ptr, 4, 1L<<4, mouse_event, window);
+	mlx_hook(window->win_ptr, 6, 1L<<4, motion_event, window);
 }

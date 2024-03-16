@@ -44,6 +44,11 @@ static int	init_fract(t_screen *window, const char *av[])
 		fract->c.re = atoi_point(av[2]);
 		fract->c.im = atoi_point(av[3]);
 	}
+	window->set = NULL;
+	window->mlx_ptr = NULL;
+	window->win_ptr = NULL;
+	window->img_ptr = NULL;
+	window->img_addr = NULL;
 	fract->min_re = -2;
 	fract->max_re = 2;
 	fract->max_im = 2;
@@ -62,12 +67,12 @@ int	main(int argc, const char **argv)
 	if (argc < 2)
 		return (1);
 	check_point(argc, argv + 1);
-	window.fract_name = ft_strdup(argv[1]);
+	window.fract_name = argv[1]; // strdup yerine?
 	window.motion = 0;
-	if (!window.fract_name)
-		return (1);
+	/*if (!window.fract_name)
+		return (1);*/
 	if (!init_fract(&window, argv))
-		return (free(window.fract_name), 1);
+		return (/*free(window.fract_name),*/ 1);
 	setup_window(&window);
 	draw_fract(&window);
 	mlx_put_image_to_window(window.mlx_ptr, window.win_ptr, window.img_ptr, 0,
