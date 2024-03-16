@@ -32,7 +32,14 @@
 */
 
 /*
-	iteration + 1 - log(log2(sqrt(pixels.re * pixels.re + pixels.im * pixels.im)))
+	precolor1 = iteration - log(log2(sqrt(pixels.re * pixels.re + pixels.im * pixels.im)))
+	precolor2 = iteration + 1 - log(log2(sqrt(pixels.re * pixels.re + pixels.im * pixels.im))) + 1
+	color = lineer_interpolasyon(precolor1, precolor2,  precolor1 % 1);
+
+	lineer_intepolasyon(precolor1, precolor2, t)
+	{
+		precolor1 * (1 - t) + precolor2 * t;
+	}
 */
 
 static int	get_color(int iteration, int code)
